@@ -6,10 +6,6 @@ const jwt = require('jsonwebtoken');
 const {verifyTokenMiddleware} = require('./middleware/verifytoken')
 const cors = require('cors')
 
-
-
-
-
 const app = express();
 dotenv.config();
 
@@ -34,9 +30,11 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   password: { type: String, required: true}
   // age: { type: Number, default: 0 },
+ 
 });
 
 const User = mongoose.model("users", userSchema);
+console.log('TEst')
 
 app.get("/test", async (req, res) => {
   try {
